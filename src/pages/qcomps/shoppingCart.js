@@ -3,12 +3,12 @@ import { useState } from 'react';
 export default function RequestTracker() {
   const [pending, setPending] = useState(0);
   const [completed, setCompleted] = useState(0);
-
+// what is async and sync
   async function handleClick() {
-    setPending(pending + 1);
+    setPending(pending =>  pending +1);
     await delay(3000);
-    setPending(pending - 1);
-    setCompleted(completed + 1);
+    setPending(pending => pending - 1);
+    setCompleted(c => c+1);
   }
 
   return (
@@ -31,3 +31,4 @@ function delay(ms) {
     setTimeout(resolve, ms);
   });
 }
+// do this
